@@ -1,0 +1,397 @@
+/* Global variables */
+:root{
+  --positive:#1aff1a;
+  --negative: #ff471a;
+  --neutral: #7575a3;
+  --warning: #ff751a;
+  --fontSize:18px;
+  --lineHeight:30px;
+  --h3FontSize:22px;
+  --h3LineHeight:30px;
+  --h2FontSize:26px;
+  --h2LineHeight:30px;
+  --h1FontSize:34px;
+  --h1LineHeight:36px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: var(--lineHeight);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html{
+    max-width: 100vw;
+    min-height: 100vh;
+}
+body{
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+div{
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: 16px;
+}
+
+section{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+section.no-side-margin{
+    margin-left: 0px;
+    margin-right: 0px;
+    max-height: 30vh;
+    min-height: 30vh;
+    margin-bottom: 16px;;
+}
+section:nth-child(2){
+    margin-top: 16px;
+}
+p{
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+}
+h1{
+    font-size: var(--h1FontSize);
+    line-height: var(--h1LineHeight);
+}
+h2{
+    font-size: var(--h2FontSize);
+    line-height: var(--h2LineHeight);
+}
+h3{
+    font-size: var(--h3FontSize);
+    line-height: var(--h3LineHeight);
+}
+p,h1,h2,h3{
+    margin-bottom: 16px;
+}
+.grouped-text{
+    margin-bottom: 4px;
+}
+.group p,.group h1, .group h2, .group h3{
+    margin-bottom: 0;
+}
+button, input[type="submit"]{
+    font-weight: bold;
+    padding: 4px 8px;
+    margin:8px 8px 8px 0;
+}
+p,h1{
+    word-wrap: break-word;
+}
+div.footer{
+    margin-top: auto;    
+}
+
+.images{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-div{
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 300px;
+    height:300px;
+    background-image: linear-gradient(#ffffff,#ffffff,#000033);
+    border-radius: 8px;
+    margin: 8px;
+
+}
+img{
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: cover;			
+    mix-blend-mode: multiply;
+    border-radius: 8px;
+    display: block;
+}
+.image-div h3, .image-div p{
+    margin:8px;
+}
+.image-div h3{
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    color: #ffffff;
+    /* To make sure very long text does not wrap at a whitespace but instead shows ellipsis */
+    max-width:284px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.image-div p{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    color: #ffffff;
+    max-width:284px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* header */
+header{
+    display: flex;
+    flex-direction: horizontal;
+    padding: 16px;
+    background-color:yellowgreen;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+header span{
+    font-size: var(--h1FontSize);
+}
+
+nav{
+    top:0;
+    background-color: #a5eb85;
+    padding: 0 16px 16px 16px;
+    min-height: 100vh;
+    /* To make it appear above the relatively positioned image-div */
+    z-index: 2;
+}
+#open-nav, #close-nav{
+    cursor:pointer;
+}
+.navOpen{
+    animation-name: openNav;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    position:fixed;    
+}
+/* nav should be closed in the begining without navClose animation, hence this class */
+.navClosed{
+    display: none;
+}
+.navClose{
+    position: absolute;
+    animation-name: closeNav;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;    
+}
+/* form */
+label{
+    margin-bottom:4px;
+}
+input{
+    padding: 8px;
+    min-width: 100%;
+    border: 0.5px solid black;
+    border-radius: 8px;
+    font-size: var(--fontSize);
+}
+.input-error{
+    margin-bottom: 16px;
+}
+.invalid-input{
+    color: red;
+}
+.margin-bottom-4{
+    margin-bottom: 4px;
+}
+@keyframes openNav{
+    from{left:-500px}
+    to{left:0}
+}
+@keyframes closeNav{
+    from{left:0px}
+    to{left:-500px}
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    font-size: var(--h2FontSize);
+    line-height: 80px;
+    min-width: 200px;
+}
+/* This is to make the close icon be in the same vertical location as hamburger icon for easier clicking */
+nav ul li:first-child{
+    padding: 16px 0;
+    line-height: var(--h2FontSize);
+}
+/* footer */
+footer{
+    margin-top: auto;
+    padding:16px;
+    background-color: yellowgreen;
+    
+}
+footer ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+button{
+    width: 100%;
+    border: 1px solid #6de934;
+    padding:8px 4px;
+    font-size: var(--h3FontSize);
+    background-color:#6de934;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.featured{
+    display: flex;
+    max-height: 30vh;
+    min-height: 30vh;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0 16px;
+    margin-bottom: 0px;
+}
+.featured img{
+    display: none;
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    align-content: flex-end;
+}
+
+.featured img:hover{
+    cursor: pointer;
+}
+.sort-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-height: auto;
+    min-height: auto;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+select{
+    padding: 4px;
+    margin-left: 8px;
+    border: 1px solid;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-card{
+    max-width: 150px;
+    min-width: 150px;
+    border-radius: 8px;
+    max-height: 240px;
+    min-height: 240px;
+    box-shadow: 2px 2px 10px 1px lightblue;
+}
+.product-card *{
+    margin:0;
+    padding: 0;  
+}
+
+.product-img{
+    max-height: 100px;
+    min-height: 100px;
+    /* margin:0; */
+    /* border-radius: 8px 8px 0 0; */
+    
+}
+.product-img img{
+    min-height: 100px;
+    max-height: 100px;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+.product-overview{
+    max-height: 80px;
+    min-height: 80px;
+    padding: 8px;  
+}
+.product-overview h3, .product-overview p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.purchase{
+    max-height: 60px;
+    min-height: 60px; 
+    padding: 8px;  
+}
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    box-shadow: 2px 2px 10px 1px lightblue;
+    
+}
+.cart-item-image{
+    max-width: 25%;
+    min-width: 25%;
+    max-height: 100px;
+    min-height: 100px;
+}
+.cart-item-image img{
+    max-width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    object-fit: cover;
+}
+.cart-item-properties{
+    max-width: 70%;
+    min-width: 70%;
+    max-height: 150px;
+    min-height: 150px;
+    padding-left: 8px;
+}
+.cart-item-properties p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+.cart-item-properties p:first-child{
+    font-weight: bold;
+}
+.cart-item-remove{
+    max-width: 5%;
+    min-width: 5%;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    section{
+    /* Since I'm using '8pt grid' I took a multiple of 8 i.e 8*27.5 */
+    margin-left: 220px;
+    margin-right: 220px;
+    }
+.images{
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+    
+}

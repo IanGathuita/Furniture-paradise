@@ -1,0 +1,77 @@
+<%- include("./partials/header") %>
+<section>
+    <h1 class="grouped-text">Featured products</h1>
+</section>
+<section class = "no-side-margin">
+    <div class="featured">
+        <img  src="beach.jpg" draggable="false">
+        <img src="train.jpg" draggable="false">
+    </div>
+</section>
+<section>
+    <h2 class="grouped-text">Other products</h2>
+    <div class="sort-div">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by" >       
+            <option>Newest</option>
+            <option>Lowest price</option>
+            <option>Highest Price</option>
+        </select>
+    </div>
+    <div class="products">
+        <div class="product-card">
+            <div class="product-img">
+                <img src="bike.jpg">
+            </div>           
+            <div class="product-overview">
+                <h3>Deep house</h3>
+                <p>Calvin Harris</p>
+            </div>
+            <div class="purchase">
+                <button>Add to cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img">
+                <img src="train.jpg">
+            </div>           
+            <div class="product-overview">
+                <h3>Amapiano remix</h3>
+                <p>Ian Jose</p>
+            </div>
+            <div class="purchase">
+                <button>Add to cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img">
+                <img src="train.jpg">
+            </div>           
+            <div class="product-overview">
+                <h3>Amapiano remix</h3>
+                <p>Ian Jose</p>
+            </div>
+            <div class="purchase">
+                <button>Add to cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img">
+                <img src="bike.jpg">
+            </div>           
+            <div class="product-overview">
+                <h3>Deep house</h3>
+                <p>Calvin Harris</p>
+            </div>
+            <div class="purchase">
+                <button>Add to cart</button>
+            </div>
+        </div>
+        
+    </div>   
+</section>
+<%- include("./partials/footer") %>
+
